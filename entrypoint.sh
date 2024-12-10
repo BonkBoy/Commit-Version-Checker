@@ -3,7 +3,7 @@
 set -ue
 
 version_lte() {
-  echo $([ "$1" = "$2" ] && return 1 || printf '%s\n' "$1" "$2" | sort -c -V)
+  [ "$1" = "$2" ] && return 1 || printf '%s\n' "$1" "$2" | sort -c -V
 }
 
 git config --global --add safe.directory /github/workspace
