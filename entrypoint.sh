@@ -18,4 +18,6 @@ git checkout main
 
 MainVersion="$(jq -r .version ./${PathToVersion})"
 
-version_lte "${MainVersion}" "${PathToVersion}"
+VersionCheck="$(version_lte "${MainVersion}" "${PathToVersion}")"
+
+echo $VersionCheck
