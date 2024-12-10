@@ -15,11 +15,12 @@ CurrentVersion="$(jq -r .version ./${PathToVersion})"
 
 git checkout main
 git pull origin main
-git branch
-git log
 
 MainVersion="$(jq -r .version ./${PathToVersion})"
 
-VersionCheck="$(version_lte "${MainVersion}" "${PathToVersion}")"
+echo $MainVersion
+echo $CurrentVersion
+
+echo $(version_lte "${MainVersion}" "${PathToVersion}")
 
 echo $VersionCheck
