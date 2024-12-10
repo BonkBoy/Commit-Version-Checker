@@ -3,7 +3,7 @@
 set -ue
 
 version_lte() {
-  echo $([ "$1" = "$2" ] && echo "Equal" || printf '%s\n' "$1" "$2" | sort -c -V)
+  echo $([ "$1" = "$2" ] && return 1 || printf '%s\n' "$1" "$2" | sort -c -V)
 }
 
 git config --global --add safe.directory /github/workspace
@@ -21,4 +21,4 @@ MainVersion="$(jq -r .version ./${PathToVersion})"
 echo $MainVersion
 echo $CurrentVersion
 
-version_lte "${MainVersion}" "${CurrentVersion}" && exit 1 || exit 0
+version_lte "${MainVersion}" "${CurrentVersion}" && exit 0 || exit 1
