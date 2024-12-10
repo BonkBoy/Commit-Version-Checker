@@ -1,0 +1,10 @@
+name: Branch Semver Version Checker
+description: 'Check the Version of the current branch against the version in Main'
+author: 'BonkBoy'
+inputs:
+  version_path:
+    description: Path to JSON file that contains version number
+    required: true
+runs:
+  using: 'docker'
+  image: './Dockerfile'
