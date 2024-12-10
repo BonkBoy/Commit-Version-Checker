@@ -9,15 +9,14 @@ version_lte() {
 git config --global --add safe.directory /github/workspace
 
 cd /github/workspace
-ls .
-
 
 PathToVersion="${INPUT_VERSION_PATH}"
 CurrentVersion="$(jq -r .version ./${PathToVersion})"
 
-git pull origin main --depth 1
-git branch
 git checkout main
+git pull origin main
+git branch
+git log
 
 MainVersion="$(jq -r .version ./${PathToVersion})"
 
