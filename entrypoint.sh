@@ -7,6 +7,7 @@ version_lte() {
 }
 
 cd /github/workspace
+ls .
 
 PathToVersion="${INPUT_VERSION_PATH}"
 CurrentVersion="$(jq -r .version /${PathToVersion})"
