@@ -10,10 +10,10 @@ cd /github/workspace
 ls .
 
 PathToVersion="${INPUT_VERSION_PATH}"
-CurrentVersion="$(jq -r .version /${PathToVersion})"
+CurrentVersion="$(jq -r .version ./${PathToVersion})"
 
 git checkout main
 
-MainVersion="$(jq -r .version /${PathToVersion})"
+MainVersion="$(jq -r .version ./${PathToVersion})"
 
 version_lte "${MainVersion}" "${PathToVersion}"
