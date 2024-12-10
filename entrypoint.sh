@@ -3,7 +3,7 @@
 set -ue
 
 version_lte() {
-  printf '%s\n' "$1" "$2" | sort -c -V
+  echo $(printf '%s\n' "$1" "$2" | sort -c -V)
 }
 
 git config --global --add safe.directory /github/workspace
@@ -22,5 +22,3 @@ echo $MainVersion
 echo $CurrentVersion
 
 echo $(version_lte "${MainVersion}" "${PathToVersion}")
-
-echo $VersionCheck
