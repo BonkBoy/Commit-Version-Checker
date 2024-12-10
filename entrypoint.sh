@@ -11,6 +11,8 @@ git config --global --add safe.directory /github/workspace
 cd /github/workspace
 ls .
 
+git branch
+
 PathToVersion="${INPUT_VERSION_PATH}"
 CurrentVersion="$(jq -r .version ./${PathToVersion})"
 
