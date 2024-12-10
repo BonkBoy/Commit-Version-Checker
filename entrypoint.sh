@@ -21,4 +21,4 @@ MainVersion="$(jq -r .version ./${PathToVersion})"
 echo $MainVersion
 echo $CurrentVersion
 
-version_lte "${MainVersion}" "${CurrentVersion}" && return 1 || return 0
+version_lte "${MainVersion}" "${CurrentVersion}" && exit 1 || exit 0
