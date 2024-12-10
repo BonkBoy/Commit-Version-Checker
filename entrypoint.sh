@@ -6,6 +6,8 @@ version_lte() {
   printf '%s\n' "$1" "$2" | sort -C -V
 }
 
+git config --global --add safe.directory /github/workspace
+
 cd /github/workspace
 ls .
 
