@@ -6,7 +6,7 @@ version_lte() {
   printf '%s\n' "$1" "$2" | sort -C -V
 }
 
-ls -alh /github/workspace
+cd /github/workspace
 
 PathToVersion="${INPUT_VERSION_PATH}"
 CurrentVersion="$(jq -r .version /${PathToVersion})"
