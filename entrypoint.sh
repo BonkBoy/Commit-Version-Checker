@@ -16,6 +16,7 @@ git branch
 PathToVersion="${INPUT_VERSION_PATH}"
 CurrentVersion="$(jq -r .version ./${PathToVersion})"
 
+git pull origin main --depth 1
 git checkout main
 
 MainVersion="$(jq -r .version ./${PathToVersion})"
